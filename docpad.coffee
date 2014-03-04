@@ -12,6 +12,7 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
+			# If not set, will default to the calculated site URL (e.g. http://localhost:9778)
 			url: "http://website.com"
 
 			# Here are some old site urls that you would like to redirect from
@@ -45,7 +46,7 @@ docpadConfig = {
 				"""
 				<!-- jQuery -->
 				<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-				<script>window.jQuery || document.write('<script src="/vendor/jquery.js"><\/script>')</script>
+				<script>window.jQuery || document.write('<script src="/vendor/jquery.js"><\\/script>')</script>
 				"""
 
 				'/vendor/log.js'
@@ -80,10 +81,46 @@ docpadConfig = {
 
 
 	# =================================
+	# Collections
+
+	# Here we define our custom collections
+	# What we do is we use findAllLive to find a subset of documents from the parent collection
+	# creating a live collection out of it
+	# A live collection is a collection that constantly stays up to date
+	# You can learn more about live collections and querying via
+	# http://bevry.me/queryengine/guide
+
+	collections:
+
+		# Create a collection called posts
+		# That contains all the documents that will be going to the out path posts
+		posts: ->
+			@getCollection('documents').findAllLive({relativeOutDirPath: 'posts'})
+
+
+	# =================================
+	# Environments
+
+	# DocPad's default environment is the production environment
+	# The development environment, actually extends from the production environment
+
+	# The following overrides our production url in our development environment with false
+	# This allows DocPad's to use it's own calculated site URL instead, due to the falsey value
+	# This allows <%- @site.url %> in our template data to work correctly, regardless what environment we are in
+
+	environments:
+		development:
+			templateData:
+				site:
+					url: false
+
+
+	# =================================
 	# DocPad Events
 
 	# Here we can define handlers for events that DocPad fires
 	# You can find a full listing of events on the DocPad Wiki
+
 	events:
 
 		# Server Extend
