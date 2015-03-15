@@ -9,10 +9,9 @@ Bare essentials for building a modern website with best practices
 1. Clone the project and run the server
 
 	``` bash
-	git clone git://github.com/docpad/html5-boilerplate.docpad.git
-	cd html5-boilerplate.docpad
-	npm install
-	docpad run
+	mkdir my-website
+	cd my-website
+	docpad run --skeleton h5bp
 	```
 
 1. [Open http://localhost:9778/](http://localhost:9778/)
