@@ -1,9 +1,9 @@
 {
-  "name": "html5-boilerplate.docpad",
+  "name": "docpad-skeleton-h5bp",
   "version": "0.1.0",
   "private": true,
   "description": "HTML5 Boilerplate skeleton for DocPad. Bare essentials for building a modern website with best practices.",
-  "homepage": "https://github.com/docpad/html5-boilerplate.docpad",
+  "homepage": "https://github.com/docpad/docpad-skeleton-h5bp",
   "keywords": [
     "docpad-skeleton",
     "docpad",
@@ -20,11 +20,11 @@
     "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
   ],
   "bugs": {
-    "url": "https://github.com/docpad/html5-boilerplate.docpad/issues"
+    "url": "https://github.com/docpad/docpad-skeleton-h5bp/issues"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/docpad/html5-boilerplate.docpad.git"
+    "url": "http://github.com/docpad/docpad-skeleton-h5bp.git"
   },
   "engines": {
     "node": "0.10",
@@ -33,6 +33,7 @@
   "dependencies": {
     "docpad": "~6.75.2",
     "docpad-plugin-eco": "~2.1.0",
+    "docpad-plugin-feedr": "~2.11.0",
     "docpad-plugin-marked": "~2.3.0",
     "docpad-plugin-partials": "~2.9.2"
   },

@@ -1,6 +1,6 @@
 # The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
-docpadConfig = {
+docpadConfig =
 
 	# =================================
 	# Template Data
@@ -143,7 +143,7 @@ docpadConfig = {
 					res.redirect(newUrl+req.url, 301)
 				else
 					next()
-}
+
 
 # Export our DocPad Configuration
 module.exports = docpadConfig
